@@ -229,7 +229,7 @@ public class CVistaRetiros extends JFrame implements ActionListener
                             long time_start, time_end;
                             time_start = System.currentTimeMillis();
                             
-                            for (int i = 0; i < 100; i++) 
+                            for (int i = 0; i < 25000; i++) 
                             {
                                 resultado = conectar.storeProcedure(cuenta, Integer.parseInt(cantidad));
                                 System.out.println("Transacion No.: " + (i+1));

@@ -11,7 +11,7 @@ public class Conexion
     public Conexion(String usuario, String contraseña)
     {
     	  user = usuario;
-          password = contraseña;
+          password = Encrypt.ecnode(contraseña);
     }
 
     public Connection connect()
@@ -20,7 +20,7 @@ public class Conexion
       
         try 
         {
-            connection = DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(url, user, Encrypt.deecnode(password));
         } 
         catch (Exception e) 
         {
@@ -63,8 +63,11 @@ public class Conexion
             clbleStmt.setString(1, chequera);
             clbleStmt.setInt(2, retiro);
             clbleStmt.execute();
+            System.out.println("Transacion realizada exitosamente!");
             return "Transacion realizada exitosamente!";
-        } catch (SQLException e) {
+        } catch (SQLException e) 
+        {
+        	System.out.println(e.getMessage()+"");
             return e.getMessage()+"";
         }
     }
@@ -110,7 +113,7 @@ begin
                                                                                
 	BEGIN CATCH
                                                                            
-		RAISERROR('Algo saliÃ³ mal.',16,1);
+		RAISERROR('Algo salio mal.',16,1);
                                                     
 		ROLLBACK TRAN
                                                                          
