@@ -215,7 +215,7 @@ public class CVistaRetiros extends JFrame implements ActionListener
             	}
             	else
             	{
-            		Conexion conectar = new Conexion(usuario, Encrypt.deecnode(contrasenia));
+            		Conexion conectar = new Conexion(usuario, contrasenia);
                     java.sql.Connection cn = conectar.connect();
 
                     if (cn != null) 
@@ -302,7 +302,7 @@ public class CVistaRetiros extends JFrame implements ActionListener
 	
 	public void ObtenerCheques()
 	{
-		 Conexion conectar = new Conexion(usuario, Encrypt.deecnode(contrasenia));
+		 Conexion conectar = new Conexion(usuario, contrasenia);
          java.sql.Connection cn = conectar.connect();
 	     
          if (cn != null) 

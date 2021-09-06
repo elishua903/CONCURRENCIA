@@ -208,7 +208,7 @@ public class CVistaLogin extends JFrame implements ActionListener
             else 
             {
             	    	
-            	Conexion conectar = new Conexion(usuario, Encrypt.deecnode(password));
+            	Conexion conectar = new Conexion(usuario, password);
                 java.sql.Connection cn = conectar.connect();
 
                 if (cn != null) 
@@ -222,7 +222,7 @@ public class CVistaLogin extends JFrame implements ActionListener
 
                     try 
                     {
-
+                    	
                         cn.close();
 
                     } 

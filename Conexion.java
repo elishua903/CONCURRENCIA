@@ -8,10 +8,10 @@ public class Conexion
     static ResultSet resultado=null;
     static PreparedStatement sentencia=null;
     
-    public Conexion(String usuario, String contraseña)
+    public Conexion(String usuario,String contraseña)
     {
     	  user = usuario;
-          password = Encrypt.ecnode(contraseña);
+          password = contraseña;
     }
 
     public Connection connect()
