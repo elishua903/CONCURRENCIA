@@ -34,7 +34,7 @@ public class CVistaRetiros extends JFrame implements ActionListener
 		 
 		
 	        
-		 this.setTitle("LOGIN");//TITULO A LA PANTALLA
+		 this.setTitle("RETIROS");//TITULO A LA PANTALLA
 		 this.setSize(600,350);//TAMAÑO DE LA PANTALLA
 		 this.setIconImage(Toolkit.getDefaultToolkit().getImage("LOGO_TEC_PNG_OK.png"));//LOGO DE LA INTERFAZ
 		 this.setLocationRelativeTo(null);//PANTALLA CENTRADA
@@ -204,7 +204,7 @@ public class CVistaRetiros extends JFrame implements ActionListener
             if ((cuenta.equals("*-SELECCIONE-*") || cantidad.isEmpty())) 
             {
             	
-                JOptionPane.showMessageDialog(null, "Seleccione una CUENTA o ingrese una CANTIDAD");
+                JOptionPane.showMessageDialog(null, "Seleccione una CUENTA o ingrese una CANTIDAD VALIDA");
 
             } 
             else 
@@ -229,10 +229,10 @@ public class CVistaRetiros extends JFrame implements ActionListener
                             long time_start, time_end;
                             time_start = System.currentTimeMillis();
                             
-                            for (int i = 0; i < 25000; i++) 
+                            for (int i = 0; i < 1000; i++) 
                             {
                                 resultado = conectar.storeProcedure(cuenta, Integer.parseInt(cantidad));
-                                System.out.println("Transacion No.: " + (i+1));
+                                System.out.println("Transación No.: " + (i+1));
                             }
                             
                             time_end = System.currentTimeMillis();
@@ -253,7 +253,7 @@ public class CVistaRetiros extends JFrame implements ActionListener
                     {
                     	
                     	Limpiar();
-                    	JOptionPane.showMessageDialog(null, "No es posible realizar RETIRAR en estos momentos, intente mas tarde.");
+                    	JOptionPane.showMessageDialog(null, "No es posible realizar RETIRAR en estos momentos, intente más tarde.");
                     	
                     }
             	}
@@ -270,7 +270,7 @@ public class CVistaRetiros extends JFrame implements ActionListener
 		if(e.getSource()==btnInformacion) 
 		{
 			
-			JOptionPane.showMessageDialog(null, "PROGRAMA REALIZADO POR LOS ALUMNOS: \nBLANCO RAMIREZ ELISEO \nCALDERON PEÑA DAVID ALONSO \nGAMEZ CARRAZCO JOSUE RAZIEL \nLOPEZ MAYA ANA KAREN \nTORTOLEDO RODRIGUEZ KEVIN ANDRES");
+			JOptionPane.showMessageDialog(null, "PROGRAMA REALIZADO POR LOS ALUMNOS: \nBLANCO RAMÍREZ ELISEO \nCALDERÓN PEÑA DAVID ALONSO \nGÁMEZ CARRASCO JOSUÉ RAZIEL \nLÓPEZ MAYA ANA KAREN \nTORTOLEDO RODRÍGUEZ KEVIN ANDRÉS");
 		
 		}
 		

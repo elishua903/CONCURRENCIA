@@ -26,7 +26,7 @@ public class CVistaLogin extends JFrame implements ActionListener
 
 	public CVistaLogin()
 	{
-		 this.setTitle("LOGIN");//TITULO A LA PANTALLA
+		 this.setTitle("INICIO DE SESIÓN");//TITULO A LA PANTALLA
 		 this.setSize(600,350);//TAMAÑO DE LA PANTALLA
 		 this.setIconImage(Toolkit.getDefaultToolkit().getImage("LOGO_TEC_PNG_OK.png"));//LOGO DE LA INTERFAZ
 		 this.setLocationRelativeTo(null);//PANTALLA CENTRADA
@@ -47,7 +47,7 @@ public class CVistaLogin extends JFrame implements ActionListener
 		 //ETIQUETA USUARIO
 		 lblUser = new JLabel();
 		 lblUser.setFont(new java.awt.Font("DejaVu Sans", 1, 12));
-		 lblUser.setText("USER");
+		 lblUser.setText("USUARIO");
 		 lblUser.setBounds(40,80,250,20);
 		 add(lblUser);
 		 
@@ -95,7 +95,7 @@ public class CVistaLogin extends JFrame implements ActionListener
 		//ETIQUETA CONTRASEÑA
 		 lblPassword = new JLabel();
 		 lblPassword.setFont(new java.awt.Font("DejaVu Sans", 1, 12));
-		 lblPassword.setText("PASSWORD");
+		 lblPassword.setText("CONTRASEÑA");
 		 lblPassword.setBounds(40,160,250,20);
 		 add(lblPassword);
 
@@ -197,12 +197,12 @@ public class CVistaLogin extends JFrame implements ActionListener
 		{
 
             usuario = txtUser.getText();
-	 		password= Encrypt.ecnode(txtPassword.getText());
+	 		password= txtPassword.getText();
 
             if ((password.isEmpty() || usuario.isEmpty())) 
             {
             	
-                JOptionPane.showMessageDialog(null, "Ingrese su nombre de usuario y contraseña ");
+                JOptionPane.showMessageDialog(null, "Ingrese su nombre de usuario y contraseña");
 
             } 
             else 
@@ -238,7 +238,7 @@ public class CVistaLogin extends JFrame implements ActionListener
                 {
                 	
                 	Limpiar();
-                	JOptionPane.showMessageDialog(null, "No es posible realizar la conexion.\nVerifique su usuario y contraseña");
+                	JOptionPane.showMessageDialog(null, "No es posible realizar la conexión.\nVerifique su usuario y contraseña");
                 	
                 }
              }
@@ -252,7 +252,7 @@ public class CVistaLogin extends JFrame implements ActionListener
 		if(e.getSource()==btnInformacion) 
 		{
 			
-			JOptionPane.showMessageDialog(null, "PROGRAMA REALIZADO POR LOS ALUMNOS: \nBLANCO RAMIREZ ELISEO \nCALDERON PEÑA DAVID ALONSO \nGAMEZ CARRAZCO JOSUE RAZIEL \nLOPEZ MAYA ANA KAREN \nTORTOLEDO RODRIGUEZ KEVIN ANDRES");
+			JOptionPane.showMessageDialog(null, "PROGRAMA REALIZADO POR LOS ALUMNOS: \nBLANCO RAMÍREZ ELISEO \nCALDERÓN PEÑA DAVID ALONSO \nGÁMEZ CARRASCO JOSUÉ RAZIEL \nLÓPEZ MAYA ANA KAREN \nTORTOLEDO RODRÍGUEZ KEVIN ANDRÉS");
 		
 		}
 		if(e.getSource()==btnSalir) 

@@ -20,14 +20,14 @@ public class Conexion
       
         try 
         {
-            connection = DriverManager.getConnection(url, user, Encrypt.deecnode(password));
+            connection = DriverManager.getConnection(url, user, password);
         } 
         catch (Exception e) 
         {
             System.out.println("La conexion fallo");
             return null;
         }
-        System.out.println("La conexion tuvo exito");
+        //System.out.println("La conexion tuvo exito");
         return connection; 
     }
     
@@ -44,7 +44,7 @@ public class Conexion
         	resultado = sentencia.executeQuery();
             System.out.println("Correcto");
         } catch (Exception e) {
-            System.out.println("No Correcto");
+            System.out.println("Incorrecto");
         }
         try {
             while(resultado.next()){
@@ -63,8 +63,8 @@ public class Conexion
             clbleStmt.setString(1, chequera);
             clbleStmt.setInt(2, retiro);
             clbleStmt.execute();
-            System.out.println("Transacion realizada exitosamente!");
-            return "Transacion realizada exitosamente!";
+            System.out.println("Transacción realizada exitosamente!");
+            return "Transación realizada exitosamente!";
         } catch (SQLException e) 
         {
         	System.out.println(e.getMessage()+"");
